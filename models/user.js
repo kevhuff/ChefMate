@@ -1,3 +1,22 @@
+const bcrypt = require('bcrypt');
+const saltRounds = 10; // 10 salt rounds for hashing password 
+
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define("User", {
+
+
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      set(val) {
+        const hash = bcrypt.hashSync(val, saltRounds);
+        this.setDataValue('password', hash);
+      }
+    }
+  });
+};
+
+
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       username: {
@@ -15,7 +34,8 @@ module.exports = function(sequelize, DataTypes) {
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        length: [8, 20] // pw must be between 8 and 20 characters
       }
     });
   
