@@ -1,0 +1,35 @@
+/* body{
+    background-color: aquamarine;
+ } */
+header, .project:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+
+
+  h2{
+    font-size: 50px;
+  }
+  .form{
+    font-family: 'Courier New', Courier, monospace;
+    
+  }
+  .no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #1ece0e;
+    text-decoration: none;
+    font-size: 100%;
+  }
+  
+  .no-button:hover {
+    color: #6ced6c;
+    text-decoration: underline;
+  }
+  
+  .dollar-amount {
+    color: #056605;
+    font-weight: bold;
+    margin-left: -5px;
+  }
