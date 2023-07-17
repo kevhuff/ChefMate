@@ -29,6 +29,8 @@ const sess = {
     })
 };
 
+require('dotenv').config();
+
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
