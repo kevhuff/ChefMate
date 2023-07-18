@@ -2,9 +2,7 @@ let searchRecipe = document.querySelector("form");
 let searchResultDiv = document.querySelector(".search-result");
 let container = document.querySelector(".container");
 let search = "";
-require('dotenv').config();
-const apiKey = process.env.API_KEY;
-const appId = process.env.APP_ID;
+
 
 searchRecipe.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -14,6 +12,8 @@ searchRecipe.addEventListener("submit", (e) => {
 
 
 async function fetchAPI() {
+    const apiKey = process.env.API_KEY;
+    const appId = process.env.APP_ID;
     const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${appId}&app_key=${apiKey}&from=0&to=20`;
     const response = await fetch(baseURL);
     const data = await response.json();
@@ -22,6 +22,7 @@ async function fetchAPI() {
 }
 
 function generateHTML(results) {
+    console.log('hi');
     container.classList.remove("initial");
     let generatedHTML = "";
     results.map((result) => {
