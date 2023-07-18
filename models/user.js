@@ -61,7 +61,7 @@ User.init(
 
 
 
-  const bcrypt = require('bcrypt');
+  //const bcrypt = require('bcrypt');
   const saltRounds = 10; // 10 salt rounds for hashing password 
   
   module.exports = function (sequelize, DataTypes) {
