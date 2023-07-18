@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS chefmate_db;
+CREATE DATABASE chefmate_db;
