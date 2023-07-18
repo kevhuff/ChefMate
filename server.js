@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -29,7 +30,6 @@ const sess = {
     })
 };
 
-require('dotenv').config();
 
 app.use(session(sess));
 
