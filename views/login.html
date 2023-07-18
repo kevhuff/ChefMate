@@ -11,47 +11,26 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
-<body class="bg-warning">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Fund My Project!</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#login">Login</a>
-                <a class="nav-item nav-link" href="#signup">Sign-up</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero bg-primary text-white text-center">
-        <div class="container initial my-5">
-            <h1 class="display-1">ChefMate</h1>
-            <p class="lead">It's your move</p>
-            <form>
-                <input type="search" id="search" placeholder="search..." aria-label="search" autocomplete="off"
-                    style="width: 300px;"></input>
-            </form>
-            <div class="search-result">
-
-            </div>
-            <!-- add image to banner -->
-            <img src="public/images/1wideboard.png" alt="Banner image" class="img-fluid">
-        </div>
-    </header>
-
-
+<header class="hero bg-primary text-white text-center">
     <div class="container my-5">
-        <div class="row">
+        <h1 class="display-2">ChefMate</h1>
+        <p class="lead">It's your move</p>
+        <!-- add image to banner -->
+        <img src="public/images/1wideboard.png" alt="Banner image" class="img-fluid">
+    </div>
+</header>
+
+<body>
+
+    <div class="container initial my-5">
+        <div class="col thing">
+
             <div class="col-md-6">
-                <!-- Login Form -->
-                <h2 class="display-4" id="login">Login</h2>
-                <form class="form login-form">
-                    <div class="form-group">
+                <!-- Sign-up form -->
+                <h2 class="display-4" id="signup">Log-in</h2>
+                <form class="form signup-form">
+                    <div class="form-group thing">
+
                         <label for="email-login">Email:</label>
                         <input class="form-control" type="text" id="email-login" required />
                     </div>
@@ -60,40 +39,21 @@
                         <input class="form-control" type="password" id="password-login" required />
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Login</button>
+                        <button class="btn btn-primary" type="submit">LOG IN!</button>
                     </div>
                 </form>
-            </div>
-
-            <div class="col-md-6">
-                <!-- Sign-up Form -->
-                <h2 class="display-4" id="signup">Sign-up</h2>
-                <form class="form signup-form">
-                    <div class="form-group">
-                        <label for="name-signup">Name:</label>
-                        <input class="form-control" type="text" id="name-signup" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email-signup">Email:</label>
-                        <input class="form-control" type="text" id="email-signup" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password-signup">Password:</label>
-                        <input class="form-control" type="password" id="password-signup" required />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Sign-up</button>
-                    </div>
+                <form>
+                    <input type="search" id="search" placeholder="search..." aria-label="search" autocomplete="off"
+                        style="width: 300px;"></input>
                 </form>
+                <div class="search-result">
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Include Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-llsZMWZz1I/2A794i6L8SiE92Idzwx4p6isY2RnPY3eTIxXOr57+20N2Si1TkI1z"
         crossorigin="anonymous"></script>
-    <script src="../public/js/script.js"></script>
 </body>
 
 </html>
