@@ -1,4 +1,4 @@
-const { Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Recipe extends Model { }
@@ -10,27 +10,35 @@ Recipe.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-          },
+        },
         name: {
             type: DataTypes.STRING,
-            required: 'This field is required.'
+            allowNull: false,
         },
         description: {
             type: DataTypes.STRING,
-            required: 'This field is required.'
+            allowNull: false,
         },
         ingredients: {
-            type: DataTypes.ARRAY,
-            required: 'This field is required.'
+            type: DataTypes.STRING,
+            allowNull: false,
+            get() {
+                return this.getDataValue('ingredients').split(';');
+            },
+            set(val) {
+               this.setDataValue('ingredients', val.join(';'));
+            },
         },
         category: {
             type: DataTypes.STRING,
-            enum: ['Thai', 'American', 'Chinese', 'Mexican', 'Indian'],
-            required: 'This field is required.'
+            allowNull: false,
+            validate: {
+                isIn: [['Thai', 'American', 'Chinese', 'Mexican', 'Indian']],
+            },
         },
         image: {
             type: DataTypes.STRING,
-            required: 'This field is required.'
+            allowNull: false,
         },
     },
     {
