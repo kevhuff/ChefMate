@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.post('/recipes', async (req, res) => {
+router.get('/recipes', async (req, res) => {
     const searchQuery = req.body.searchQuery;
     const appId = process.env.APP_ID;
     const apiKey = process.env.API_KEY;
