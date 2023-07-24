@@ -10,32 +10,37 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        
-        <a href="/">Home Page!</a>
-      </h1>
+  <header class="header">
+    <div class="logo">
+      <a href="/">
+        <img src="/images/chefmatelogo.png" alt="ChefMate Logo" id="logo">
+      </a>
+    </div>
+    <label class="hamburger-menu">
+      <input type="checkbox" />
+    </label>
+    <aside class="sidebar">
       <nav>
-        <!-- Conditionally render login or logout links -->
-        
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          {{#if logged_in}}
+            <li><a href="/logout" id="logout">Logout</a></li>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+          {{/if}}
+        </ul>
       </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      {{!-- {{#if logged_in}} --}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        
-        <a href="/login">login</a>
-        {{!-- {{/if}} --}}
-      <!-- Render the sub layout -->
-      
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    </aside>
+  </header>
+
+  <main class="container container-fluid mt-5">
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
