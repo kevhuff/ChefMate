@@ -1,4 +1,3 @@
-
 const withAuth = require('../../utils/auth');
 const { Recipe, User, Project } = require('../../models');
 const router = require('express').Router();
@@ -7,10 +6,15 @@ const app = require('express');
 const theRec = [];
 const axios = require('axios');
 //app.use(express.json());
+
 async function getRecipesFromEdamam(sea) {
   const appId = 'b61503cb';
   const apiKey = 'b3bb8198c324d6d8f860f7a44544fcb6';
   const searchTerm = sea; // Replace with the desired search term
+router.get('/recipes', async (req, res) => {
+    const searchQuery = req.body.searchQuery;
+    const appId = process.env.APP_ID;
+    const apiKey = process.env.API_KEY;
 
   try {
     const response = await axios.get('https://api.edamam.com/search', {
