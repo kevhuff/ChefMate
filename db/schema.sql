@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS chefmate_db;
-CREATE DATABASE chefmate_db;
+DROP DATABASE IF EXISTS crowdfund_db;
+CREATE DATABASE crowdfund_db;
