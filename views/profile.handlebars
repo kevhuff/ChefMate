@@ -6,8 +6,27 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
+    <form class="form login-form">
+       <div class="form-group">
+        <label for="recipes">recipe finder:</label>
+        <input class="form-input" type="text" id="recipes" />
+         <button class="btn btn-primary" type="submit">FIND</button>
+      </div>
+    </form>
     <h3>Create a New Project:</h3>
-
+<form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
     <form class="form new-project-form">
       <div class="form-group">
         <label for="project-name">project name:</label>
@@ -27,7 +46,7 @@
     </form>
   </div>
 
-  {{#if projects.length}}
+  {{!-- {{#if projects.length}}
   <div class="col-md-6 project-list">
     <h3>Current Projects:</h3>
 
@@ -43,6 +62,6 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div> --}}
 
-<script src="./js/profile.js"></script>
+<script src="./js/recipe.js"></script>
